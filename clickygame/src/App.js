@@ -3,6 +3,8 @@ import './App.css';
 import Nav from './Components/Nav'
 import Jumbotron from './Components/Jumbotron'
 import { Column, Row, Container } from './Components/Grid';
+import Image from './Components/Image'
+import './images'
 
 const App = () => {
   return (
@@ -11,21 +13,25 @@ const App = () => {
       <Jumbotron />
        <Container>
          <Row>
-           <Column>
-           
-           </Column>
+          <Image src={images.one}/>
+          <Image />
+          <Image />
+          <Image />  
          </Row>
          <Row>
-           <Column>
-           
-           </Column>
+          <Image />
+          <Image />
+          <Image />
+          <Image />     
          </Row>
          <Row>
-           <Column>
-           
-           </Column>
-         </Row>
+          <Image />  
+          <Image />  
+          <Image />
+          <Image />     
+        </Row>
        </Container>
+      <Footer />
   </div>
         );
   };
