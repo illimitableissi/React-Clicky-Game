@@ -13,16 +13,14 @@ console.log(images)
 class App extends React.Component{
   state = {
     images,
-    message: "",
+    message: "Click any image to start!",
     score: 0,
     topScore: 0
     };
   
     gameOver = () => {
       if (this.state.score > this.state.topScore) {
-        this.setState({topScore: this.state.score}, function() {
-          console.log(this.state.topScore);
-        });
+        this.setState({topScore: this.state.score});
       }
       this.state.images.forEach(img => {
         img.count = 0;
@@ -36,9 +34,7 @@ class App extends React.Component{
         if (o.id === id) {
           if(images[i].count === 0){
             images[i].count = images[i].count + 1;
-            this.setState({score : this.state.score + 1, message:"Keep it going!"}, function(){
-              console.log(this.state.score);
-            });
+            this.setState({score : this.state.score + 1, message:"Keep it going!"});
             this.state.images.sort(() => Math.random() - 0.5)
             return true; 
           } else {
