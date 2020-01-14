@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 export const Container = ({ fluid, children }) => {
     return (
@@ -14,6 +15,6 @@ export const Row = ({ fluid, children }) => {
 
 export const Column = ({children}) => {
     return (
-        <div className="col-sm">{children}</div>
+        <div className="col-sm text-center">{children}</div>
     );
 };

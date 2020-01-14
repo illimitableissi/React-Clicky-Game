@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 const styles = {
     imageStyle: {
@@ -12,7 +13,7 @@ const styles = {
 
 const Image = (props) => {
     return (
-        <div>
+        <div className="animated fadeInLeft delay-1s">
             <img src={props.image} style={styles.imageStyle} alt={props.alt} id={props.id} className="img-thumbnail" onClick ={() => props.clickCount(props.id)}></img>          
         </div>
     );

@@ -58,7 +58,7 @@ render() {
             <Row>
               {this.state.images.map(img => (
                 <Image id={img.id} alt={img.alt} image={img.imgUrl} clickCount={this.clickCount} />
-              ))}           
+              ))}         
             </Row>
           </Container>
         <Footer />

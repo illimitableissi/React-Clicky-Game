@@ -1,0 +1,18 @@
+.jumbotron {
+    background-image: url(../pictures/background.jpeg);
+    background-repeat: round;
+}
+
+.scores, .display-4, .lead {
+    color: white;
+}
+
+.img-thumbnail:hover {
+    border-color: teal;
+
+}
+
+.message {
+    color: red;
+}
+
