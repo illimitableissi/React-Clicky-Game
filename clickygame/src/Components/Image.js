@@ -13,7 +13,7 @@ const styles = {
 const Image = (props) => {
     return (
         <div>
-            <img src={props.image} style={styles.imageStyle} alt={props.alt} id={props.id} className="img-thumbnail" onClick ={props.clickCount}></img>          
+            <img src={props.image} style={styles.imageStyle} alt={props.alt} id={props.id} className="img-thumbnail" onClick ={() => props.clickCount(props.id)}></img>          
         </div>
     );
 };

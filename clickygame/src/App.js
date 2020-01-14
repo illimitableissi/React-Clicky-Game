@@ -13,6 +13,7 @@ console.log(images)
 class App extends React.Component{
   state = {
     images,
+    message: "",
     score: 0,
     topScore: 0
     };
@@ -26,8 +27,7 @@ class App extends React.Component{
       this.state.images.forEach(img => {
         img.count = 0;
       });
-      alert(`Game Over :( \nscore: ${this.state.score}`);
-      this.setState({score: 0});
+      this.setState({score: 0, message:"You already clicked that!?!"});
       return true;
     }
   
@@ -36,7 +36,7 @@ class App extends React.Component{
         if (o.id === id) {
           if(images[i].count === 0){
             images[i].count = images[i].count + 1;
-            this.setState({score : this.state.score + 1}, function(){
+            this.setState({score : this.state.score + 1, message:"Keep it going!"}, function(){
               console.log(this.state.score);
             });
             this.state.images.sort(() => Math.random() - 0.5)
@@ -52,7 +52,7 @@ class App extends React.Component{
 render() {
   return (
     <div>
-      <Nav score={this.state.score} topScore={this.state.topScore} />
+      <Nav message={this.state.message} score={this.state.score} topScore={this.state.topScore} />
         <Jumbotron />
           <Container>
             <Row>
