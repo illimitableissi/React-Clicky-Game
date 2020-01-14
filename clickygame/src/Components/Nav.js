@@ -7,7 +7,7 @@ const Nav = (props) => {
                 <a className="navbar-brand" href="/">Clicky Game</a>
                     <h4 className="game-message">{props.children}</h4>
                     <h4>Score: {props.score}</h4>
-                    <h4>Total Score:{props.totalscore}</h4>
+                    <h4>Top Score:{props.topScore}</h4>
             </nav>            
         </div>
     );

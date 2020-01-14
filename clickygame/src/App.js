@@ -7,20 +7,67 @@ import { Column, Row, Container } from './Components/Grid';
 import Image from './Components/Image'
 import images from './image'
 
+console.log(images)
 
 
-const App = () => {
+class App extends React.Component{
+  state = {
+    images,
+    score: 0,
+    topScore: 0
+    };
+  
+    gameOver = () => {
+      if (this.state.score > this.state.topScore) {
+        this.setState({topScore: this.state.score}, function() {
+          console.log(this.state.topScore);
+        });
+      }
+      this.state.images.forEach(img => {
+        img.count = 0;
+      });
+      alert(`Game Over :( \nscore: ${this.state.score}`);
+      this.setState({score: 0});
+      return true;
+    }
+  
+    clickCount = id => {
+      this.state.images.find((o, i) => {
+        if (o.id === id) {
+          if(images[i].count === 0){
+            images[i].count = images[i].count + 1;
+            this.setState({score : this.state.score + 1}, function(){
+              console.log(this.state.score);
+            });
+            this.state.images.sort(() => Math.random() - 0.5)
+            return true; 
+          } else {
+            this.gameOver();
+          }
+        }
+      });
+    }
+
+
+render() {
   return (
-  <div className="mx-auto">
-    <Nav />
-      <Jumbotron />
-       <Container>
-         <Row>
-          <Image/>    
-        </Row>
-       </Container>
-      <Footer />
-  </div>
-        );
-  };
+    <div>
+      <Nav score={this.state.score} topScore={this.state.topScore} />
+        <Jumbotron />
+          <Container>
+            <Row>
+              {this.state.images.map(img => (
+                <Image id={img.id} alt={img.alt} image={img.imgUrl} clickCount={this.clickCount} />
+              ))}           
+            </Row>
+          </Container>
+        <Footer />
+    </div>
+  );
+}
+
+
+
+}
+
 export default App;
