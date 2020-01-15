@@ -1,5 +1,5 @@
 # React-Clicky-Game
-![screenshot](public/images/screenshot.PNG)
+![screenshot](https://github.com/illimitableissi/React-Clicky-Game/blob/master/clickygame/public/images/screenshot.PNG)
 
 Welcome to the React Clicky Game! Start the game by clicking an image. Your score will increase by 1 when you click on an image. The goal is to not click on an image more than once. Your score will reset to 0 otherwise.
 
